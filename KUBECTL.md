@@ -53,3 +53,8 @@ curl http://localhost:8081/actuator/health
 
 kubectl -npol-dev0 exec -it integration-fed-service-d48fd5949-jvb6h  -- bash
 kubectl port-forward portal-transaction-api-66b684989-6t5r7 8080:8081 -n pol-dev0
+
+kubectl scale deploy integration-cufs-service --replicas=0 -n tyl-prod0
+kubectl scale deploy integration-fileorchestration-service --replicas=0 -n tyl-prod0
+kubectl scale deploy integration-merchant-update-service --replicas=0 -n tyl-prod0
+kubectl scale deploy integration-merchant-check-service --replicas=0 -n tyl-prod0
