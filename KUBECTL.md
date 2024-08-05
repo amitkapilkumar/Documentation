@@ -50,3 +50,6 @@ kubectl get po -n cweld01
 -- conneting to bash terminal in service pod 
 kubectl -ncweld01 exec -it integration-fed-service-5b4bfdb8d9-m89jk  -- bash
 curl http://localhost:8081/actuator/health
+
+kubectl -npol-dev0 exec -it integration-fed-service-d48fd5949-jvb6h  -- bash
+kubectl port-forward portal-transaction-api-66b684989-6t5r7 8080:8081 -n pol-dev0
